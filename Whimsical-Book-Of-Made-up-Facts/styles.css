@@ -1,0 +1,311 @@
+
+        /* RESET & GLOBAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f8e7c0 0%, #ecd9b4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Quicksand', 'Segoe UI', sans-serif;
+            padding: 2rem 1rem;
+            transition: background 0.3s ease;
+        }
+
+        /* MAIN BOOK CONTAINER (whimsical card) */
+        .book-container {
+            max-width: 1100px;
+            width: 100%;
+            background: #fffef7;
+            border-radius: 42px 32px 52px 38px;
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2), 0 8px 18px rgba(0, 0, 0, 0.1), inset 0 1px 4px rgba(255,255,200,0.8);
+            transition: all 0.25s ease;
+            overflow: hidden;
+        }
+
+        /* Header area with title & whimsical decor */
+        .book-header {
+            background: #fce9cf;
+            padding: 1.4rem 2rem;
+            text-align: center;
+            border-bottom: 3px dashed #f3bc6c;
+            position: relative;
+        }
+
+        .book-header h1 {
+            font-family: 'Kalam', cursive;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #a55d35;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px 0 #ffe0a3;
+            word-break: keep-all;
+        }
+
+        .book-header h1 i {
+            color: #e7b42c;
+            margin: 0 8px;
+            font-size: 2.2rem;
+        }
+
+        .whimsy-sub {
+            font-size: 0.9rem;
+            color: #b97f4b;
+            margin-top: 6px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Book content area */
+        .book-content {
+            padding: 2rem 2rem 1.8rem;
+        }
+
+        /* Facts page grid - 5 facts per page layout */
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 1.2rem;
+            min-height: 380px;
+        }
+
+        .fact-card {
+            background: #fff6ea;
+            border-radius: 60px 20px 60px 20px;
+            padding: 0.9rem 1.6rem;
+            box-shadow: 6px 6px 0 rgba(188, 128, 68, 0.12);
+            border-left: 8px solid #f5bc70;
+            transition: transform 0.2s, background 0.2s;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #3b2a1f;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .fact-card:hover {
+            transform: translateX(6px);
+            background: #fff2e0;
+            border-left-color: #e3a14f;
+        }
+
+        .fact-icon {
+            font-size: 1.7rem;
+            min-width: 48px;
+            text-align: center;
+            color: #d69644;
+        }
+
+        .fact-text {
+            line-height: 1.4;
+        }
+
+        /* BIRTHDAY MESSAGE STYLES - only visible on last page, whimsical & magical */
+        .birthday-message {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            padding: 1.5rem 1rem;
+            background: linear-gradient(135deg, #fff0df, #ffe6cf);
+            border-radius: 70px 30px 70px 30px;
+            box-shadow: 0 12px 20px rgba(161, 94, 31, 0.15);
+            border: 2px solid #fbd692;
+            animation: sparklePulse 1.8s infinite ease;
+            transition: all 0.2s;
+        }
+
+        .birthday-message h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #d45c1e, #f5b042, #e8872a, #ffbc6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 12px rgba(255,215,130,0.6);
+            letter-spacing: 2px;
+            margin-bottom: 0.6rem;
+        }
+
+        .birthday-message i {
+            font-size: 2rem;
+            margin: 0 10px;
+            color: #f3a257;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .birthday-message p {
+            font-family: 'Kalam', cursive;
+            font-size: 1.1rem;
+            color: #b45f2b;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes sparklePulse {
+            0% { box-shadow: 0 8px 18px rgba(243, 156, 68, 0.2); background: #fff0df; }
+            50% { box-shadow: 0 8px 28px rgba(243, 156, 68, 0.5); background: #fff7e8; }
+            100% { box-shadow: 0 8px 18px rgba(243, 156, 68, 0.2); background: #fff0df; }
+        }
+
+        /* Pagination controls (book flipping) */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 2px dotted #ecd0a4;
+        }
+
+        .page-btn {
+            background: #f3cf9a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #593c22;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .page-btn:active {
+            transform: scale(0.96);
+        }
+
+        .page-btn:hover:not(:disabled) {
+            background: #f7bf79;
+            color: #2c1b0e;
+            box-shadow: 2px 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .page-indicator {
+            font-family: 'Kalam', cursive;
+            font-size: 1.3rem;
+            background: #fff2e2;
+            padding: 6px 18px;
+            border-radius: 100px;
+            color: #ad6b39;
+            font-weight: bold;
+        }
+
+        /* blank page (when user clicks no in intro) */
+        .blank-state {
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        /* truly blank: no visible content */
+        .blank-state.hidden-blank {
+            visibility: hidden;
+        }
+
+        /* Intro overlay (whimsical gateway) */
+        .intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #ffe6c7, #f7d9aa);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(3px);
+            transition: opacity 0.7s ease;
+            flex-direction: column;
+            font-family: 'Kalam', cursive;
+        }
+
+        .whimsy-card {
+            background: #fffbf0;
+            border-radius: 64px;
+            padding: 3rem 4rem;
+            text-align: center;
+            max-width: 560px;
+            width: 90%;
+            box-shadow: 0 35px 45px rgba(0,0,0,0.2), inset 0 1px 4px #fff8dd;
+            border: 1px solid #ffe3aa;
+        }
+
+        .whimsy-card h2 {
+            font-size: 2.2rem;
+            color: #bb6b36;
+            margin-bottom: 2rem;
+        }
+
+        .choice-buttons {
+            display: flex;
+            gap: 28px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .choice-btn {
+            font-size: 1.7rem;
+            font-weight: bold;
+            padding: 12px 36px;
+            border: none;
+            border-radius: 80px;
+            font-family: 'Kalam', cursive;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #ecc897;
+            color: #5c3a1f;
+            box-shadow: 0 6px 0 #b97a42;
+        }
+
+        .choice-btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 3px 0 #b97a42;
+        }
+
+        .choice-btn.no-btn {
+            background: #c7aa7a;
+            color: #2e241a;
+            box-shadow: 0 6px 0 #7e5a38;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        footer {
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 1rem;
+            background: #f9e9d4;
+            color: #b37b48;
+            border-top: 1px solid #eed7b5;
+        }
+
+        @media (max-width: 650px) {
+            .book-content { padding: 1.2rem; }
+            .fact-card { font-size: 0.9rem; padding: 0.7rem 1rem; }
+            .book-header h1 { font-size: 1.8rem; }
+            .page-indicator { font-size: 1rem; }
+            .birthday-message h2 { font-size: 2rem; }
+        }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Anny's Book of Madeup Facts | Whimsical Birthday Edition</title>
+    <!-- Google Fonts for whimsical & readable typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- INTRO MODAL : "Are you ready to embrace the whimsy beyond?" -->
+<div id="introOverlay" class="intro-overlay">
+    <div class="whimsy-card">
+        <h2>✨ Are you ready to embrace the whimsy beyond? ✨</h2>
+        <div class="choice-buttons">
+            <button id="yesBtn" class="choice-btn">YES 🌈</button>
+            <button id="noBtn" class="choice-btn no-btn">NO 🕯️</button>
+        </div>
+        <p style="margin-top: 28px; font-size: 0.9rem; color:#c18d55;"><i class="fas fa-feather-alt"></i> whispers of magic await...</p>
+    </div>
+</div>
+
+<!-- MAIN BOOK (initially hidden until YES) -->
+<div id="mainBook" class="book-container hide">
+    <div class="book-header">
+        <h1><i class="fas fa-book-open"></i> Anny's Book of Madeup Facts <i class="fas fa-fairy"></i></h1>
+        <div class="whimsy-sub"><i class="fas fa-moon"></i> trust the whimsy · flip the pages <i class="fas fa-star"></i></div>
+    </div>
+    <div class="book-content">
+        <!-- dynamic facts will be injected here based on pagination (5 per page) -->
+        <div id="factsContainer" class="facts-grid"></div>
+        
+        <!-- Special birthday message container (appears only on last page) -->
+        <div id="birthdayMessageContainer" class="birthday-message" style="display: none;">
+            <i class="fas fa-birthday-cake"></i>
+            <h2>Happy Birthday Micheal</h2>
+            <i class="fas fa-star"></i>
+            <p><i class="fas fa-magic"></i> May your year be filled with whimsy, wonder, and made-up miracles <i class="fas fa-feather"></i></p>
+        </div>
+        
+        <div class="pagination">
+            <button id="prevPageBtn" class="page-btn"><i class="fas fa-chevron-left"></i> Previous page</button>
+            <span id="pageIndicator" class="page-indicator">Page 1 / 6</span>
+            <button id="nextPageBtn" class="page-btn">Next page <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+    <footer>
+        <i class="fas fa-hat-wizard"></i> 30 enchanted made-up facts · flip like a real whimsical book · every fact whispers magic <i class="fas fa-dragon"></i>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
